@@ -1,0 +1,36 @@
+.semi-modal-body {
+  overflow: auto;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+}
+
+.t-icon {
+  margin-top: 20px;
+  width: 100px;
+}
+
+.t-card {
+  background-color: dimgrey
+}
+
+
+.t-card:hover {
+  background-color: cadetblue;
+}
+
+.card-item {
+  padding: 8px;
+  flex-basis: 25%;
+}
+
+.cards {
+  background-color: var(--semi-color-fill-0);
+  padding: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap;
+}
