@@ -1,0 +1,36 @@
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    height: 400px;
+    background-color: white;
+    box-shadow: 0 0 20px #454343;
+}
+
+
+.container {
+    height: 100vh;
+    padding: 10% 30%;
+    /*overflow: hidden;*/
+    background-image: url(./assets/img/pexels-alena-darmel-7710150.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.qrcode {
+    width: 35%;
+    height: 100%;
+    text-align: center;
+    float: left;
+    padding-top: 60px;
+    color: #1a1919;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.qrcode img {
+    margin: 30px auto;
+    width: 150px;
+}
