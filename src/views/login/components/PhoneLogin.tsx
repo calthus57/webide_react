@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
 import {Form, Button} from '@douyinfe/semi-ui';
+import {useNavigate} from "react-router-dom";
 
 export const PhoneLogin = () => {
   const [verCodeButtonState, setVerCodeButtonState] = useState(true)
   const [verCodeButtonText, setVerCodeButtonText] = useState('获取验证码')
+
+  const push = useNavigate();
 
   const sendVerCode = () => {
     setVerCodeButtonState(false)

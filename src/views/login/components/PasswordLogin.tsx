@@ -1,10 +1,33 @@
 import React from 'react';
 import {Form, Toast, Button} from '@douyinfe/semi-ui';
+import {api} from "../../../axios/request";
+import {useNavigate} from "react-router-dom";
 
-export const PasswordLogin = () => {
-  const handleSubmit = (values: any) => {
-    console.log(values);
-    Toast.info('表单已提交');
+interface PhoneLoginParams {
+  username: string,
+  password: string,
+  agree: boolean
+}
+
+export const PasswordLogin = (props: any) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (values: PhoneLoginParams) => {
+    // console.log(values);
+    api.login(values).then(res => {
+      console.log(res.data)
+      if (res.data.code === 500) {
+        Toast.error('账号或密码不正确');
+      } else if (res.data.code === 0) {
+        navigate("/editor")
+      }
+    }).catch((error) => {
+      console.log(error.toJSON());
+    })
+    Toast.info({
+      content: '正在登录',
+      duration: 1
+    });
   };
   return (
     <div>
