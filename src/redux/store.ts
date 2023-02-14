@@ -1,3 +1,8 @@
 import {configureStore} from "@reduxjs/toolkit";
+import userInfoReducer from "./slices/userInfoSlice";
 
-configureStore
+export default configureStore({
+  reducer:{
+    userInfoReducer
+  }
+})

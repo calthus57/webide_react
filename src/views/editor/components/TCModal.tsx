@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { Modal, Button, Card, Row, Col, Rating, Avatar, Popover } from '@douyinfe/semi-ui';
+import React, {useState} from 'react';
+import {Modal, Button, Card, Row, Col, Rating, Avatar, Popover} from '@douyinfe/semi-ui';
 import reactIcon from '../assets/img/react.svg'
-import { Justify } from 'react-bootstrap-icons';
 import Meta from '@douyinfe/semi-ui/lib/es/card/meta';
-import { IconInfoCircle } from '@douyinfe/semi-icons';
+import {IconInfoCircle} from '@douyinfe/semi-icons';
 import './css/TCModal.css'
 
 export const TCModal = () => {
@@ -13,9 +12,9 @@ export const TCModal = () => {
   }
   return (
     <>
-      <Button onClick={() => {
-        setvisible(true)
-      }}>create new project</Button>
+      {/*<Button onClick={() => {*/}
+      {/*  setvisible(true)*/}
+      {/*}}>create new project</Button>*/}
       <Modal
         title="Start from a template"
         height={400}
@@ -33,13 +32,13 @@ export const TCModal = () => {
             setvisible(false)
           }}>
             <Card className='t-card'
-              shadows='hover'
-              style={{ maxWidth: 360 }}
-              bodyStyle={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between'
-              }}
+                  shadows='hover'
+                  style={{maxWidth: 360}}
+                  bodyStyle={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between'
+                  }}
             >
               <Meta
                 title="Semi Doc"
@@ -55,12 +54,12 @@ export const TCModal = () => {
                 position='top'
                 showArrow
                 content={
-                  <article style={{ padding: 6 }}>
+                  <article style={{padding: 6}}>
                     这是一个 Card
                   </article>
                 }
               >
-                <IconInfoCircle style={{ color: 'var(--semi-color-primary)' }} />
+                <IconInfoCircle style={{color: 'var(--semi-color-primary)'}}/>
               </Popover>
             </Card>
           </div>
@@ -69,13 +68,13 @@ export const TCModal = () => {
             setvisible(false)
           }}>
             <Card className='t-card'
-              shadows='hover'
-              style={{ maxWidth: 360 }}
-              bodyStyle={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between'
-              }}
+                  shadows='hover'
+                  style={{maxWidth: 360}}
+                  bodyStyle={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between'
+                  }}
             >
               <Meta
                 title="Semi Doc"
@@ -91,121 +90,12 @@ export const TCModal = () => {
                 position='top'
                 showArrow
                 content={
-                  <article style={{ padding: 6 }}>
+                  <article style={{padding: 6}}>
                     这是一个 Card
                   </article>
                 }
               >
-                <IconInfoCircle style={{ color: 'var(--semi-color-primary)' }} />
-              </Popover>
-            </Card>
-
-          </div>
-
-          <div className='card-item' onClick={() => {
-            setvisible(false)
-          }}>
-            <Card className='t-card'
-              shadows='hover'
-              style={{ maxWidth: 360 }}
-              bodyStyle={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between'
-              }}
-            >
-              <Meta
-                title="Semi Doc"
-                avatar={
-                  <Avatar
-                    alt='Card meta img'
-                    size="default"
-                    src={reactIcon}
-                  />
-                }
-              />
-              <Popover
-                position='top'
-                showArrow
-                content={
-                  <article style={{ padding: 6 }}>
-                    这是一个 Card
-                  </article>
-                }
-              >
-                <IconInfoCircle style={{ color: 'var(--semi-color-primary)' }} />
-              </Popover>
-            </Card>
-          </div>
-
-          <div className='card-item' onClick={() => {
-            setvisible(false)
-          }}>
-            <Card className='t-card'
-              shadows='hover'
-              style={{ maxWidth: 360 }}
-              bodyStyle={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between'
-              }}
-            >
-              <Meta
-                title="Semi Doc"
-                avatar={
-                  <Avatar
-                    alt='Card meta img'
-                    size="default"
-                    src={reactIcon}
-                  />
-                }
-              />
-              <Popover
-                position='top'
-                showArrow
-                content={
-                  <article style={{ padding: 6 }}>
-                    这是一个 Card
-                  </article>
-                }
-              >
-                <IconInfoCircle style={{ color: 'var(--semi-color-primary)' }} />
-              </Popover>
-            </Card>
-          </div>
-
-          <div className='card-item' onClick={() => {
-            setvisible(false)
-          }}>
-            <Card className='t-card'
-              shadows='hover'
-              style={{ maxWidth: 360 }}
-              bodyStyle={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between'
-              }}
-            >
-              <Meta
-                title="Semi Doc"
-                avatar={
-                  <Avatar
-                    alt='Card meta img'
-                    size="default"
-                    src={reactIcon}
-                  />
-                }
-              />
-              <Popover
-                position='top'
-                showArrow
-                content={
-                  <article style={{ padding: 6 }}>
-                    这是一个 Card
-                  </article>
-                }
-              >
-                <IconInfoCircle style={{ color: 'var(--semi-color-primary)' }} />
+                <IconInfoCircle style={{color: 'var(--semi-color-primary)'}}/>
               </Popover>
             </Card>
 
@@ -215,13 +105,13 @@ export const TCModal = () => {
             setvisible(false)
           }}>
             <Card className='t-card'
-              shadows='hover'
-              style={{ maxWidth: 360 }}
-              bodyStyle={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between'
-              }}
+                  shadows='hover'
+                  style={{maxWidth: 360}}
+                  bodyStyle={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between'
+                  }}
             >
               <Meta
                 title="Semi Doc"
@@ -237,12 +127,121 @@ export const TCModal = () => {
                 position='top'
                 showArrow
                 content={
-                  <article style={{ padding: 6 }}>
+                  <article style={{padding: 6}}>
                     这是一个 Card
                   </article>
                 }
               >
-                <IconInfoCircle style={{ color: 'var(--semi-color-primary)' }} />
+                <IconInfoCircle style={{color: 'var(--semi-color-primary)'}}/>
+              </Popover>
+            </Card>
+          </div>
+
+          <div className='card-item' onClick={() => {
+            setvisible(false)
+          }}>
+            <Card className='t-card'
+                  shadows='hover'
+                  style={{maxWidth: 360}}
+                  bodyStyle={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between'
+                  }}
+            >
+              <Meta
+                title="Semi Doc"
+                avatar={
+                  <Avatar
+                    alt='Card meta img'
+                    size="default"
+                    src={reactIcon}
+                  />
+                }
+              />
+              <Popover
+                position='top'
+                showArrow
+                content={
+                  <article style={{padding: 6}}>
+                    这是一个 Card
+                  </article>
+                }
+              >
+                <IconInfoCircle style={{color: 'var(--semi-color-primary)'}}/>
+              </Popover>
+            </Card>
+          </div>
+
+          <div className='card-item' onClick={() => {
+            setvisible(false)
+          }}>
+            <Card className='t-card'
+                  shadows='hover'
+                  style={{maxWidth: 360}}
+                  bodyStyle={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between'
+                  }}
+            >
+              <Meta
+                title="Semi Doc"
+                avatar={
+                  <Avatar
+                    alt='Card meta img'
+                    size="default"
+                    src={reactIcon}
+                  />
+                }
+              />
+              <Popover
+                position='top'
+                showArrow
+                content={
+                  <article style={{padding: 6}}>
+                    这是一个 Card
+                  </article>
+                }
+              >
+                <IconInfoCircle style={{color: 'var(--semi-color-primary)'}}/>
+              </Popover>
+            </Card>
+
+          </div>
+
+          <div className='card-item' onClick={() => {
+            setvisible(false)
+          }}>
+            <Card className='t-card'
+                  shadows='hover'
+                  style={{maxWidth: 360}}
+                  bodyStyle={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between'
+                  }}
+            >
+              <Meta
+                title="Semi Doc"
+                avatar={
+                  <Avatar
+                    alt='Card meta img'
+                    size="default"
+                    src={reactIcon}
+                  />
+                }
+              />
+              <Popover
+                position='top'
+                showArrow
+                content={
+                  <article style={{padding: 6}}>
+                    这是一个 Card
+                  </article>
+                }
+              >
+                <IconInfoCircle style={{color: 'var(--semi-color-primary)'}}/>
               </Popover>
             </Card>
           </div>
