@@ -1,53 +1,36 @@
-import React, { useState } from 'react';
-import CodeMirror from '@uiw/react-codemirror';
-// @ts-ignore
-import { javascript } from '@codemirror/lang-javascript';
-import { okaidia } from '@uiw/codemirror-theme-okaidia';
-import { githubLightInit } from '@uiw/codemirror-themes-all';
-import axios from 'axios';
-// import MonacoEditor from 'react-monaco-editor';
+import React, {useRef, useState} from 'react';
+import Editor from "@monaco-editor/react";
+import {editor} from "monaco-editor";
+import IModelContentChangedEvent = editor.IModelContentChangedEvent;
 
+interface IFileProps {
+  path: string,
+  defaultLanguage: string | undefined,
+  defaultValue: string | undefined
+}
 
+export default function File(props: IFileProps) {
+  const editorRef = useRef(null);
 
-export default function File() {
-  const [value, setvalue] = useState("console.log('hello world!');")
-  // const [code, setcode] = useState("hello world")
-  axios.get("http://localhost:8088/").then(res => {
-            console.log(res)
-            setvalue(res.data)
-          }).catch()
+  const [value, setvalue] = useState("console.log('hello world')")
 
-  const onChange = React.useCallback((value: any) => {
-    console.log('value:', value);
-  }, []);
-  // const editorDidMount=(editor: { focus: () => void; }, monaco: any)=> {
-  //   console.log('editorDidMount', editor);
-  //   editor.focus();
-  // }
-  // const options = {
-  //   selectOnLineNumbers: true
-  // };
+  const handleEditorChange = (value: string | undefined, event: IModelContentChangedEvent) => {
+    // here is the current value
+  }
+
+  const handleEditorDidMount = (editor: any, monaco: any) => {
+    console.log(typeof editor)
+    editorRef.current = editor;
+  }
+
   return (
-    <CodeMirror
-      value={value}
-      height="400px"
-      extensions={[javascript({ jsx: true })]}
-      onChange={onChange}
-      theme={githubLightInit({
-        settings: {
-          caret: '#c6c6c6',
-          fontFamily: 'monospace',
-        }
-      })}
+    <Editor
+      height="90vh"
+      path={props.path}
+      defaultLanguage={props.defaultLanguage}
+      defaultValue={props.defaultValue}
+      onMount={handleEditorDidMount}
+      onChange={handleEditorChange}
     />
-    // <MonacoEditor
-    //     height="400"
-    //     language="javascript"
-    //     theme="vs-dark"
-    //     value={code}
-    //     options={options}
-    //     onChange={onChange}
-    //     editorDidMount={editorDidMount}
-    //   />
   );
 }

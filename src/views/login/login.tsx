@@ -17,7 +17,7 @@ export const Login = () => {
           <img src={qrcode} alt="二维码"/>
         </div>
         <div style={{
-          width: "65%", height: "100%", float: "left", padding: "20px"
+          width: "65%", height: "100%", float: "left", padding: "20px", boxSizing: "border-box"
         }}>
           <Nav mode={'horizontal'}>
             <Nav.Item itemKey={'phone-login'} text={"验证码登录"} icon={<IconSmartphoneStroked/>}
