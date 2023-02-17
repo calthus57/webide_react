@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {Tree} from '@douyinfe/semi-ui';
-import {DragTreeNode} from "@douyinfe/semi-ui/lib/es/tree";
+import React, { useState } from 'react';
+import { Tree } from '@douyinfe/semi-ui';
+import { DragTreeNode } from "@douyinfe/semi-ui/lib/es/tree";
 
 export default function Directory() {
   const initialData = [
@@ -70,7 +70,7 @@ export default function Directory() {
     border: '1px solid var(--semi-color-border)'
   };
   const onDrop = (info: { dropPosition?: any; dropToGap?: any; node?: DragTreeNode; dragNode?: any; }) => {
-    const {dropToGap, node, dragNode} = info;
+    const { dropToGap, node, dragNode } = info;
     // @ts-ignore
     const dropKey = node.key;
     console.log(dropKey)
@@ -129,6 +129,7 @@ export default function Directory() {
   }
   return (
     <Tree
+      className='directory'
       treeData={treeData}
       filterTreeNode
       directory

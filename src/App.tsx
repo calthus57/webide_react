@@ -1,9 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import Editor from './views/editor/Editor';
-import IdeIndex from './views/index/IdeIndex';
-import {Login} from "./views/login/login";
+import Editor from './editor/Editor';
+import IdeIndex from './index/IdeIndex';
+import {Login} from "./login/Login";
 
 function App() {
   return (

@@ -58,6 +58,7 @@
   },
   "devDependencies": {
     "@redux-devtools/core": "^3.13.1",
-    "@types/react-mailchimp-subscribe": "^2.1.1"
+    "@types/react-mailchimp-subscribe": "^2.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.52.0"
   }
 }

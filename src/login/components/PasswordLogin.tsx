@@ -1,6 +1,6 @@
 import React from 'react';
 import {Form, Toast, Button} from '@douyinfe/semi-ui';
-import {api} from "../../../axios/request";
+import {api} from "../../axios/request";
 import {useNavigate} from "react-router-dom";
 
 
