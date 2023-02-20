@@ -12,8 +12,11 @@ import {
 import Directory from "./components/Directory";
 import EditorHeader from "./components/EditorHeader";
 import CodeEditor from './components/CodeEditor';
+import { useSelector } from 'react-redux';
+import { IState } from '../redux/store';
+import openedFilesSlice from '../redux/slices/openedFilesSlice';
 
-interface IFile {
+export interface IFile {
   name: string,
   language: string,
   value: string
@@ -79,58 +82,15 @@ export default function Editor() {
   //     clientX = e.clientX
   //   }
   // }
+  const openedFiles = useSelector((state:IState)=>state.openedFiles)
+  console.log(openedFiles)
+ 
+  const [curFile, setCurFile] = useState(openedFiles[0]);
 
-
-  const files: IFile[] = [{
-    name: "script.ts",
-    language: "javascript",
-    value: "const onbreakpoint = (screen: any, bool: any) => {\n" +
-      "    console.log(screen, bool);\n" +
-      "  };",
-  }, {
-    name: "style.css",
-    language: "css",
-    value: ".container {\n" +
-      "    height: 100vh;\n" +
-      "    padding: 10% 30%;\n" +
-      "    /*overflow: hidden;*/\n" +
-      "    background-image: url(./assets/img/pexels-alena-darmel-7710150.jpg);\n" +
-      "    background-size: cover;\n" +
-      "    background-attachment: fixed;\n" +
-      "\n" +
-      "}"
-  }, {
-    name: "index.html",
-    language: "html",
-    value: "<body>\n" +
-      "  <noscript>You need to enable JavaScript to run this app.</noscript>\n" +
-      "  <div id=\"root\"></div>\n" +
-      "  <!--\n" +
-      "    This HTML file is a template.\n" +
-      "    If you open it directly in the browser, you will see an empty page.\n" +
-      "\n" +
-      "    You can add webfonts, meta tags, or analytics to this file.\n" +
-      "    The build step will place the bundled scripts into the <body> tag.\n" +
-      "\n" +
-      "    To begin the development, run `npm start` or `yarn start`.\n" +
-      "    To create a production bundle, use `npm run build` or `yarn build`.\n" +
-      "  -->\n" +
-      "</body>",
-  }]
-  const [curFile, setCurFile] = useState(files[0]);
-
-  const switchMode = () => {
-    const body = document.body;
-    if (body.hasAttribute('theme-mode')) {
-      body.removeAttribute('theme-mode');
-    } else {
-      body.setAttribute('theme-mode', 'dark');
-    }
-  };
   const onTabClick = (key: string) => {
-    for (let i = 0; i < files.length; i++) {
-      if (files[i].name == key) {
-        setCurFile(files[i]);
+    for (let i = 0; i < openedFiles.length; i++) {
+      if (openedFiles[i].name === key) {
+        setCurFile(openedFiles[i]);
       }
     }
   }
@@ -171,7 +131,7 @@ export default function Editor() {
               // keepDOM={false}
               tabPaneMotion={false}  // 是否使用动画切换 tabs
             >
-              {files.map(file => (
+              {openedFiles.map(file => (
                 <TabPane tab={
                   <span>
                     <IconFile />

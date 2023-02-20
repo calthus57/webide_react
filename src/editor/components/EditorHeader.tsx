@@ -5,6 +5,15 @@ import Header from '@douyinfe/semi-ui/lib/es/navigation/Header';
 
 
 export default function EditorHeader() {
+  const switchMode = () => {
+    const body = document.body;
+    if (body.hasAttribute('theme-mode')) {
+      body.removeAttribute('theme-mode');
+    } else {
+      body.setAttribute('theme-mode', 'dark');
+    }
+  };
+  
   return (
     <Header style={{backgroundColor: 'var(--semi-color-bg-1)'}}>
       <Nav mode="horizontal" defaultSelectedKeys={['Home']}>
@@ -28,8 +37,8 @@ export default function EditorHeader() {
           <Button>Click me</Button>
         </Dropdown>
         <Nav.Footer>
-          {/*<Switch checkedText="暗" uncheckedText="亮" onChange={switchMode} aria-label="switch bg color"/>*/}
-          <Switch checkedText="暗" uncheckedText="亮" aria-label="switch bg color"/>
+          <Switch checkedText="暗" uncheckedText="亮" onChange={switchMode} aria-label="switch bg color"/>
+          
           <Button
             theme="borderless"
             icon={<IconBell size="large"/>}
